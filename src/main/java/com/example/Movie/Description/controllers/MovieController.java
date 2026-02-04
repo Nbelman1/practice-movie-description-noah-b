@@ -39,11 +39,13 @@ public class MovieController {
                 """;
     }
 
+
+    // prompts Gemini, saves description to database
     @PostMapping("/generate")
     public String handleForm(@RequestParam("movieTitle") String title) throws HttpException, IOException {
         String description = geminiService.generateDescription(title);
         movieRepository.save(new Movie(title, description));
-        return "Success!";
+        return "Success! Movie description: " + description;
     }
 
     @GetMapping
