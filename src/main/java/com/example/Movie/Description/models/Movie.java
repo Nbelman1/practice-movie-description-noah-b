@@ -14,8 +14,7 @@ public class Movie {
     // default constructor
     public Movie() {};
 
-    public Movie(int id, String title, String description) {
-        this.id = id;
+    public Movie(String title, String description) {
         this.title = title;
         this.description = description;
     }
